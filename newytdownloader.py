@@ -8,7 +8,7 @@ def download():
     try:
         youtube = pytube.YouTube(video_url)
         video = youtube.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
-        video.download(r"C:\Users\pp_al\Documents\Coding\demo-prog-básica\Youtube Downloader python")
+        video.download()
         notif.config(fg="green", text="Download complete")
     except Exception as e:
         print(e)
